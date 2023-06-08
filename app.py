@@ -42,5 +42,5 @@ if st.session_state["chat_answers_history"]:
             st.session_state["user_prompt_history"],
         )
     ):
-        message(user_query, is_user=True, key=f"user_msg_{i}",avatar_style="miniavs") # align's the message to the right
+        message(user_query, is_user=True, key=f"user_msg_{i}",avatar_style="big-smile") # align's the message to the right
         message(generated_response, key=f"bot_msg_{i}")
