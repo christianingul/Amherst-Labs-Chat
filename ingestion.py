@@ -13,11 +13,17 @@ import streamlit as st
 #[]: This empty square bracket notation is used to indicate that the variable List is initialized as an empty list.
 def run_llm(query: str, chat_history: List[tuple[str, Any]] = []) -> Any:
 
-    pinecone_api_key = st.secrets.get("PINECONE")
-    pinecone_environment = st.secrets.get("ENVIRONMENT")
-    index_name = st.secrets.get("INDEX")
-    openai_api_key = st.secrets.get("OPENAI")
-
+    pinecone_api = st.secrets.get("PINECONE")
+    pinecone_api_key = pinecone_api.get("key")
+    
+    pinecone_server = st.secrets.get("ENVIRONMENT")
+    pinecone_environment = pinecone_server.get("key")
+    
+    pinecone_index = st.secrets.get("INDEX")
+    index_name = pinecone_index.get("key")
+    
+    openai_secret = st.secrets.get("OPENAI")
+    openai_api_key = openai_secret.get("key")
 
 
     pinecone.init(
