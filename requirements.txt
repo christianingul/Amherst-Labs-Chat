@@ -1,0 +1,7 @@
+streamlit
+langchain
+openai
+tabulate
+pinecone-client
+tiktoken
+pandas
