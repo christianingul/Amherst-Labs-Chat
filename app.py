@@ -3,7 +3,7 @@ from ingestion import run_llm
 from streamlit_chat import message
 
 st.set_page_config(page_title="Geregè", page_icon=":robot_face:")
-st.header("Chat with Geregè")
+st.header("Geregè Chat Bot")
 
 # Leveraging Streamlit session_state, which will work as memory in our case. It is unique for each session.
 if "user_prompt_history" not in st.session_state:
