@@ -5,6 +5,16 @@ from streamlit_chat import message
 st.set_page_config(page_title="Geregè", page_icon=":robot_face:")
 st.header("Geregè Chat Bot")
 
+if password_secret is None:
+    st.error("Required secrets are missing. Please check your secrets configuration.")
+    st.stop()
+
+password = st.text_input("Enter password:", type="password")
+if password != password_secret.get("password"):
+    st.error("Reach out to zach@amherstlabs.xyz for a password")
+    st.stop()
+
+    
 # Leveraging Streamlit session_state, which will work as memory in our case. It is unique for each session.
 if "user_prompt_history" not in st.session_state:
     st.session_state["user_prompt_history"] = []
