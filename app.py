@@ -5,6 +5,8 @@ from streamlit_chat import message
 st.set_page_config(page_title="Geregè", page_icon=":robot_face:")
 st.header("Geregè Chat Bot")
 
+password_secret = st.secrets.get("PASSWORD")
+
 if password_secret is None:
     st.error("Required secrets are missing. Please check your secrets configuration.")
     st.stop()
