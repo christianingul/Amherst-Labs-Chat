@@ -13,7 +13,7 @@ if password_secret is None:
 
 password = st.text_input("Enter password:", type="password")
 if password != password_secret.get("password"):
-    st.error("Reach out to zach@amherstlabs.xyz for a password")
+    st.error("Reach out to @zach_arslan on Telegram for access")
     st.stop()
 
     
